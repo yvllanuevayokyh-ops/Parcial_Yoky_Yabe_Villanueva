@@ -1,0 +1,40 @@
+# =========================================
+# .dockerignore para API Horario Med
+# Archivos a ignorar en el build de Docker
+# =========================================
+
+# Carpetas de compilación
+target/
+!target/*.jar
+!target/*/*.jar
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentación
+README.md
+GUIA-RAPIDA-EXAMEN.md
+*.md
+
+# Logs
+*.log
+
+# Archivos de configuración local
+application-local.properties
+application-dev.properties
+
+# Colección de Postman
+*.postman_collection.json

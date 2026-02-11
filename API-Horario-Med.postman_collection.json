@@ -1,0 +1,183 @@
+{
+	"info": {
+		"name": "API Horario Med",
+		"description": "Colección de endpoints para testing de la API de horarios de medicamentos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Schedules CRUD",
+			"item": [
+				{
+					"name": "GET - Listar todos los horarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/schedules",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["schedules"]
+						}
+					}
+				},
+				{
+					"name": "GET - Obtener horario por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/schedules/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["schedules", "1"]
+						}
+					}
+				},
+				{
+					"name": "POST - Crear nuevo horario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Enalapril\",\n  \"dosis\": \"10mg\",\n  \"hora\": \"20:00\",\n  \"frecuencia\": \"Diario\",\n  \"notas\": \"Con la cena\",\n  \"activo\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/schedules",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["schedules"]
+						}
+					}
+				},
+				{
+					"name": "PUT - Actualizar horario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Paracetamol\",\n  \"dosis\": \"1000mg\",\n  \"hora\": \"08:00\",\n  \"frecuencia\": \"Cada 6 horas\",\n  \"notas\": \"Tomar con abundante agua\",\n  \"activo\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/schedules/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["schedules", "1"]
+						}
+					}
+				},
+				{
+					"name": "DELETE - Eliminar horario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/schedules/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["schedules", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Schedules Avanzados",
+			"item": [
+				{
+					"name": "GET - Horarios activos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/schedules/active",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["schedules", "active"]
+						}
+					}
+				},
+				{
+					"name": "GET - Horarios inactivos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/schedules/inactive",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["schedules", "inactive"]
+						}
+					}
+				},
+				{
+					"name": "GET - Buscar por nombre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/schedules/search?nombre=paracetamol",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["schedules", "search"],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "paracetamol"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "GET - Horarios por hora",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/schedules/hora/08:00",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["schedules", "hora", "08:00"]
+						}
+					}
+				},
+				{
+					"name": "GET - Contar horarios activos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/schedules/count/active",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["schedules", "count", "active"]
+						}
+					}
+				}
+			]
+		}
+	]
+}
